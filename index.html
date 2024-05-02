@@ -36,14 +36,15 @@
             font-family: sans-serif;
             text-align: justify;
             overflow-y: scroll;
-            background-color: #fafafa;
+            background-color: whitesmoke;
         }
 
         section {
             padding: 25px 25px;
             line-height: 40px;
             border-bottom: 1px solid #ddd;
-            opacity: 0.25;
+            background-color: whitesmoke;
+            color:s grey;
             font-size: 20px;
         }
 
@@ -64,8 +65,8 @@
         #header {
             padding: 20px 20px 20px 20px;
             text-align: center;
-            font-size: 22px;
-            color: navy;
+            font-size: 16px;
+            color: steelblue;
         }
 
         #marker {
@@ -76,6 +77,11 @@
             border-radius: 50%;
             cursor: pointer;
         }
+        h3{
+            color:steelblue;
+            text-align: center;
+            border-color: slategrey;
+        }
     </style>
 
 
@@ -85,7 +91,7 @@
             <h1>The Hudson River: Hydropower Highway</h1>
         </div>
         <section id="overview" class="active">
-            <h3>Champlain Hudson Power Express</h3>
+            <h3>Champlain Hudson <br>Power Express</h3>
             <p>
                 The Champlain Hudson Power Express is an ambition clean energy project that will bring hydropower
                 generated in Quebec down the Hudson River valley to New York City.
@@ -187,8 +193,9 @@
                 'line-cap': 'round'
             },
             'paint': {
-                'line-color': 'blue',
-                'line-width': 8
+                'line-color': 'steelblue',
+                'line-opacity':0.8,
+                'line-width': 8.5
             }
         });
     });
