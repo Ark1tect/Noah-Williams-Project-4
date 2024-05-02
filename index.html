@@ -34,12 +34,13 @@
             width: 25%;
             margin-left: 75%;
             font-family: sans-serif;
+            text-align: justify;
             overflow-y: scroll;
             background-color: #fafafa;
         }
 
         section {
-            padding: 25px 50px;
+            padding: 25px 25px;
             line-height: 40px;
             border-bottom: 1px solid #ddd;
             opacity: 0.25;
@@ -66,6 +67,15 @@
             font-size: 22px;
             color: navy;
         }
+
+        #marker {
+            background-image: url('https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
     </style>
 
 
@@ -79,6 +89,7 @@
             <p>
                 The Champlain Hudson Power Express is an ambition clean energy project that will bring hydropower
                 generated in Quebec down the Hudson River valley to New York City.
+                The line of travel shown is approximate.
             </p>
         </section>
         <section id="canada-border" class="active">
@@ -92,13 +103,6 @@
             <p>
                 In Putnam, the transmission lines move from submarine to terrestrial
 
-
-
-
-
-
-
-
             </p>
         </section>
         <section id="astoria-converter">
@@ -110,13 +114,6 @@
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                 deserunt mollit anim id est laborum.
-
-
-
-
-
-
-
 
             </p>
         </section>
@@ -130,13 +127,6 @@
                 ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                 deserunt mollit anim id est laborum.
-
-
-
-
-
-
-
 
             </p>
         </section>
@@ -160,7 +150,48 @@
             zoom: 6.5,
             pitch: 45
         });
-
+   map.on('load', () => {
+        map.addSource('route', {
+            'type': 'geojson',
+            'data': {
+                'type': 'Feature',
+                'properties': {},
+                'geometry': {
+                    'type': 'LineString',
+                    'coordinates': [
+                        [-73.338663, 45.000253],
+                        [-73.308185, 44.249749],
+                        [-73.429555, 44.026890],
+                        [-73.371796, 43.740724],
+                        [-73.398232, 43.734701],
+                        [-74.035911, 42.820588],
+                        [-73.849511, 42.434100],
+                        [-73.980632, 41.183822],
+                        [-73.886337, 41.100181],
+                        [-73.933049, 40.877310],
+                        [-73.908314, 40.865887],
+                        [-73.932362, 40.832645],
+                        [-73.912436, 40.789510],
+                        [-73.899256, 40.784002],
+                        [-73.9430711, 40.763141],
+                    ]
+                }
+            }
+        });
+        map.addLayer({
+            'id': 'route',
+            'type': 'line',
+            'source': 'route',
+            'layout': {
+                'line-join': 'round',
+                'line-cap': 'round'
+            },
+            'paint': {
+                'line-color': 'blue',
+                'line-width': 8
+            }
+        });
+    });
         const chapters = {
             'overview': {
                 bearing: 0,
@@ -178,7 +209,7 @@
             'mill-bay': {
                 duration: 6000,
                 center: [-73.37417303691613, 43.740171598917975],
-                bearing: 100,
+                bearing: -25,
                 zoom: 15,
                 pitch: 0
             },
@@ -196,6 +227,9 @@
             },
 
         };
+        const astoriaplant = new mapboxgl.Marker()
+            .setLngLat([-73.89980360665398, 40.78419995146565])
+            .addTo(map);
 
         let activeChapterName = 'canada-border';
         function setActiveChapter(chapterName) {
