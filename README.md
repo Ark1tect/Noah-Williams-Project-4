@@ -1,0 +1,1 @@
+Created for Advanced GIS: Interactive Web Mapping Spring 2024. This project emulates a mapbox example demonstrating fly to a location based on scroll position. The map shows the course of the CHPE clean energy project that will bring electricity from Quebec hydropower plants to Queens. Additional data and visualizations will be added.
