@@ -7,87 +7,14 @@
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        #map {
-            position: relative;
-            top: 0;
-            bottom: 0;
-            width: 50%;
-        }
-    </style>
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <style>
-        #map {
-            position: fixed;
-            width: 75%;
-            height: auto;
-        }
+    
 
-        #features {
-            width: 25%;
-            margin-left: 75%;
-            font-family: sans-serif;
-            text-align: left;
-            overflow-y: scroll;
-            background-color: whitesmoke;
-        }
-
-        section {
-            padding: 100px 30px 100px 30px;
-            line-height: 40px;
-            border-bottom: 1px solid #ddd;
-            background-color: whitesmoke;
-            color: s grey;
-            font-size: 20px;
-        }
-
-        section.active {
-            opacity: 1;
-        }
-
-        section:last-child {
-            border-bottom: none;
-            margin-bottom: 200px;
-        }
-
-        #title-bar {
-            float: above;
-            position: relative;
-        }
-
-        #header {
-            padding: 20px 20px 20px 20px;
-            text-align: center;
-            font-size: 16px;
-            color: steelblue;
-        }
-
-
-        h3 {
-            color: steelblue;
-            text-align: center;
-            border-color: slategrey;
-        }
-
-        figure {
-            margin: 0;
-            padding: 0;
-            line-height: 15px;
-        }
-
-        figcaption {
-            font-size: 12px;
-        }
-    </style>
-
-
+<!--creating the chapter sections -->
     <div id="map"></div>
     <div id="features">
         <div id="header">
@@ -185,25 +112,7 @@
             zoom: 6.5,
             pitch: 45
         });
-</script>
-        <style>
-    #marker {
-        background-image: url('https://qns.com/wp-content/uploads/2023/09/Converter-Site-Rendering-1-700x460.png');
-        background-size: cover;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-
-    .mapboxgl-popup {
-        max-width: 200px;
-    }
-</style>
-
-<div id="map"></div>
-
-<script>
+        console.log('map', map)
 
     // create the popup
     const popup = new mapboxgl.Popup({ offset: 25 }).setText(
@@ -219,8 +128,7 @@
         .setLngLat(astoriaplant)
         .setPopup(popup) // sets a popup on this marker
         .addTo(map);
-</script>
-<script>
+
     //adding the route of the cable//
         map.on('load', () => {
             map.addSource('route', {
@@ -294,7 +202,6 @@
             });
         });
 
-        
         const chapters = {
             'overview': {
                 bearing: 0,

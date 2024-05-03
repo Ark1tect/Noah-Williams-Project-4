@@ -1,2 +1,105 @@
 
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    height: auto;
+}
+#marker {
+    background-image: url('https://qns.com/wp-content/uploads/2023/09/Converter-Site-Rendering-1-700x460.png');
+    border: 10px;
+    background-size: cover;
+    width: 75px;
+    height: 75px;
+    border-width: 10px;
+    border-radius: 100%;
+    border-color: whitesmoke;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+#map {
+    position: fixed;
+    width: 75%;
+    height: 100%;
+}
+
+#features {
+    width: 25%;
+    margin-left: 75%;
+    font-family: sans-serif;
+    text-align: left;
+    overflow-y: scroll;
+    background-color: whitesmoke;
+}
+
+section {
+    padding: 100px 30px 100px 30px;
+    line-height: 40px;
+    border-bottom: 1px solid #ddd;
+    background-color: whitesmoke;
+    color: s grey;
+    font-size: 20px;
+}
+
+section.active {
+    opacity: 1;
+}
+
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 200px;
+}
+
+#title-bar {
+    float: above;
+    position: relative;
+}
+
+#header {
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+    font-size: 16px;
+    color: steelblue;
+}
+
+
+h3 {
+    color: steelblue;
+    text-align: center;
+    border-color: slategrey;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    line-height: 15px;
+}
+
+figcaption {
+    font-size: 12px;
+}
+#marker {
+    background-image: url('https://qns.com/wp-content/uploads/2023/09/Converter-Site-Rendering-1-700x460.png');
+    border: 10px;
+    background-size: cover;
+    width: 75px;
+    height: 75px;
+    border-width: 10px;
+    border-radius: 100%;
+    border-color: whitesmoke;
+    cursor: pointer;
+}
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
