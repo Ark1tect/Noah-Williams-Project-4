@@ -88,18 +88,4 @@ figure {
 figcaption {
     font-size: 12px;
 }
-#marker {
-    background-image: url('https://qns.com/wp-content/uploads/2023/09/Converter-Site-Rendering-1-700x460.png');
-    border: 10px;
-    background-size: cover;
-    width: 75px;
-    height: 75px;
-    border-width: 10px;
-    border-radius: 100%;
-    border-color: whitesmoke;
-    cursor: pointer;
-}
 
-.mapboxgl-popup {
-    max-width: 200px;
-}
